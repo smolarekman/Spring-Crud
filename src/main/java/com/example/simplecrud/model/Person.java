@@ -10,14 +10,35 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "first-name")
+
     private String firstName;
 
-    @Column(name = "last-name")
+
     private String lastName;
 
-    @Column(name = "phone-number")
+
     private int phoneNumber;
+
+
+    public Person() {
+    }
+
+    public Person(String firstName, String lastName, int phoneNumber) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phoneNumber=" + phoneNumber +
+                '}';
+    }
+
 
     public Long getId() {
         return id;
